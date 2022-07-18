@@ -17,7 +17,7 @@ public interface Unit {
   public void defeatedByPlayer(@NotNull Player player);
 
   /**
-   * Checks if two object are "equal".
+   * Checks if two units are "equal".
    */
   public boolean equals(final Object o);
 
