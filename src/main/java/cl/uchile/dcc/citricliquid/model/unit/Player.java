@@ -161,7 +161,7 @@ public class Player extends AbstractUnit {
    */
   public int playerBattle(@NotNull Player opponent) {
     //these prints will be an input when implemented
-    System.out.println(this.name + ":, ¿Elige activar una carta?");
+    System.out.println(this.name + ", ¿Elige activar una carta?");
     System.out.println(opponent.name + ", ¿Elige activar una carta?");
     int attack = this.battleRoll();
     System.out.println("Continua la batalla... ");
