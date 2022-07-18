@@ -36,6 +36,4 @@ public class BonusPanel extends AbstractPanel {
   private static void applyBonusTo(final @NotNull Player player) {
     player.increaseStarsBy(player.roll() * Math.min(player.getNormaLevel(), 3));
   }
-
-
 }
