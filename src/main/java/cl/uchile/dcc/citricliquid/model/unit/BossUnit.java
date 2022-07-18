@@ -60,5 +60,4 @@ public class BossUnit extends AbstractUnit implements Unit {
     this.increaseStarsBy(player.getStars() / 2);
     player.reduceStarsBy(player.getStars() / 2);
   }
-
 }
