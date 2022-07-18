@@ -15,6 +15,9 @@ public class NeutralPanel extends AbstractPanel {
 
   }
 
+  /**
+   * Returns the type of the current panel.
+   */
   public String toString() {
     return "NeutralPanel";
   }
