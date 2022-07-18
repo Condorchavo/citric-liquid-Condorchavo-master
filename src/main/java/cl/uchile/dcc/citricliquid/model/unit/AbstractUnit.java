@@ -8,7 +8,7 @@ import org.jetbrains.annotations.NotNull;
  * Class that represents the units (player and enemies) of each game.
  *
  * @author <a href="mailto:vicente.gatica@ug.uchile.cl">Vicente Gatica Perez</a>.
- * @version 1.0
+ * @version 2.0
  * @since 1.0
  */
 public abstract class AbstractUnit {

@@ -90,6 +90,9 @@ public class Player extends AbstractUnit {
     wins += amount;
   }
 
+  /**
+   * Checks if two object are "equal".
+   */
   @Override
   public boolean equals(final Object o) {
     if (this == o) {

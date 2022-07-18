@@ -13,6 +13,9 @@ import org.jetbrains.annotations.NotNull;
 public class HomePanel extends AbstractPanel {
   public HomePanel() {}
 
+  /**
+   * Returns the type of the current panel.
+   */
   @Override
   public String toString() {
     return "HomePanel";
