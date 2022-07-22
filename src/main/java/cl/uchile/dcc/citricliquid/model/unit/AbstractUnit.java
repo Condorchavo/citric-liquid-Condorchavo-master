@@ -1,6 +1,7 @@
 package cl.uchile.dcc.citricliquid.model.unit;
 
 import java.util.Random;
+
 import org.jetbrains.annotations.NotNull;
 
 
