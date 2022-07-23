@@ -90,6 +90,9 @@ public class Player extends AbstractUnit {
     wins += amount;
   }
 
+  /**
+   * Checks if two object are "equal".
+   */
   @Override
   public boolean equals(final Object o) {
     if (this == o) {
@@ -141,7 +144,7 @@ public class Player extends AbstractUnit {
   /**
    * This method is executed when the actual player won against a unit.
    */
-  public void winAgainstUnit(@NotNull Unit unit) {
+  public void winAgainstUnit(@NotNull Enemies unit) {
     this.increaseStarsBy(unit.getStars());
     unit.defeatedByPlayer(this);
   }
@@ -149,7 +152,7 @@ public class Player extends AbstractUnit {
   /**
    * This method is executed when the actual player lost against a unit.
    */
-  public void defeatedByUnit(@NotNull Unit unit) {
+  public void defeatedByUnit(@NotNull Enemies unit) {
     unit.winAgainstPlayer(this);
   }
 
@@ -158,7 +161,7 @@ public class Player extends AbstractUnit {
    */
   public int playerBattle(@NotNull Player opponent) {
     //these prints will be an input when implemented
-    System.out.println(this.name + ":, ¿Elige activar una carta?");
+    System.out.println(this.name + ", ¿Elige activar una carta?");
     System.out.println(opponent.name + ", ¿Elige activar una carta?");
     int attack = this.battleRoll();
     System.out.println("Continua la batalla... ");
@@ -166,13 +169,39 @@ public class Player extends AbstractUnit {
   }
 
   /**
+   * This method is executed when the player choose to defend.
+   */
+  private void defend(int atk, int def, int rollAttack) {
+    int rollDefend = roll();
+    int damage = Math.max(1, rollAttack + atk - (rollDefend + def));
+    System.out.println(this.name + " defendió y recibió un daño total de: " + damage);
+  }
+
+  /**
+   * This method is executed when the player choose to dodge.
+   */
+  private void dodge(int atk, int evd, int rollAttack) {
+    int rollEvd = roll();
+    if (rollEvd + evd > rollAttack + atk) {
+      System.out.println(this.name + " esquivó y no recibió daño");
+    } else {
+      System.out.println(this.name + " esquivó y recibió el total del ataque");
+    }
+  }
+
+  /**
    * This method is executed when the actual player have a battle against a unit.
    */
-  public int unitBattle(Unit unit) {
+  public int unitBattle(Enemies unit) {
     //that will be an input when implemented
     System.out.println(this.name + ", ¿Elige activar una carta?");
     int attack = this.battleRoll();
-    System.out.println("etc... ");
+    int num = roll();
+    if (num == 1 || num == 3 || num == 5) {
+      this.defend(attack, 2, num);
+    } else {
+      this.dodge(attack, 1, num);
+    }
     return attack;
   }
 

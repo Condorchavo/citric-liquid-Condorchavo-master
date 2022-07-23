@@ -6,10 +6,10 @@ import org.jetbrains.annotations.NotNull;
  * Class that represents the wild units.
  *
  * @author <a href="mailto:vicente.gatica@ug.uchile.cl">Vicente Gatica Perez</a>.
- * @version 1.0
+ * @version 2.0
  * @since 1.0
  */
-public class WildUnit extends AbstractUnit implements Unit {
+public class WildUnit extends AbstractUnit implements Enemies {
 
   /**
    * Creates a new character.
@@ -24,6 +24,9 @@ public class WildUnit extends AbstractUnit implements Unit {
     super(name, hp, atk, def, evd);
   }
 
+  /**
+   * This method is executed when the boss unit lost against an opponent.
+   */
   @Override
   public void defeatedByPlayer(@NotNull Player player) {
     player.increaseWinsBy(1);
@@ -47,6 +50,9 @@ public class WildUnit extends AbstractUnit implements Unit {
         && getStars() == wildUnit.getStars();
   }
 
+  /**
+   * This method is executed when the boss unit won against an opponent.
+   */
   @Override
   public void winAgainstPlayer(@NotNull Player player) {
     this.increaseStarsBy(player.getStars() / 2);

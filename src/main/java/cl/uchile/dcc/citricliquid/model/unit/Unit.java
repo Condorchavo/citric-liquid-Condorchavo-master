@@ -3,21 +3,62 @@ package cl.uchile.dcc.citricliquid.model.unit;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * Interface for the boss and wild units.
+ * Interface for the player, boss and wild units.
  *
  * @author <a href="mailto:vicente.gatica@ug.uchile.cl">Vicente Gatica Perez</a>.
- * @version 1.0
+ * @version 2.0
  * @since 1.0
  */
 public interface Unit {
-  public void defeatedByPlayer(@NotNull Player player);
+  /**
+   * Returns the character's name.
+   */
+  String getName();
 
-  public boolean equals(final Object o);
+  /**
+   * Returns the character's max hit points.
+   */
+  int getMaxHp();
 
-  public void winAgainstPlayer(Player player);
+  /**
+   * Returns the current character's attack points.
+   */
+  int getAtk();
 
+  /**
+   * Returns the current character's defense points.
+   */
+  int getDef();
 
+  /**
+   * Returns the current character's evasion points.
+   */
+  int getEvd();
+
+  /**
+   * Returns the current hit points of the character.
+   */
+  int getCurrentHp();
+
+  /**
+   * Increases this player's star count by an amount.
+   */
+  void increaseStarsBy(final int amount);
+
+  /**
+   * Reduces this player's star count by a given amount.
+   *
+   * <p>The star count will must always be greater or equal to 0
+   */
+  void reduceStarsBy(final int amount);
+
+  /**
+   * Returns this player's star count.
+   */
   int getStars();
 
-  void reduceStarsBy(int stars);
+  /**
+   * This method is executed when a player won the actual unit.
+   */
+  void defeatedByPlayer(@NotNull Player player);
 }

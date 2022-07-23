@@ -6,10 +6,10 @@ import org.jetbrains.annotations.NotNull;
  * Class that represents the boss units.
  *
  * @author <a href="mailto:vicente.gatica@ug.uchile.cl">Vicente Gatica Perez</a>.
- * @version 1.0
+ * @version 2.0
  * @since 1.0
  */
-public class BossUnit extends AbstractUnit implements Unit {
+public class BossUnit extends AbstractUnit implements Enemies {
 
   /**
    * Creates a new character.
@@ -24,7 +24,9 @@ public class BossUnit extends AbstractUnit implements Unit {
     super(name, hp, atk, def, evd);
   }
 
-
+  /**
+   * Checks if two object are "equal".
+   */
   @Override
   public boolean equals(final Object o) {
     if (this == o) {
@@ -58,5 +60,4 @@ public class BossUnit extends AbstractUnit implements Unit {
     this.increaseStarsBy(player.getStars() / 2);
     player.reduceStarsBy(player.getStars() / 2);
   }
-
 }

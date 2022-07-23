@@ -7,12 +7,15 @@ import org.jetbrains.annotations.NotNull;
  * Class that represents the drop panel.
  *
  * @author <a href="mailto:vicente.gatica@ug.uchile.cl">Vicente Gatica Perez</a>.
- * @version 1.0
+ * @version 2.0
  * @since 1.0
  */
 public class DropPanel extends AbstractPanel {
   public DropPanel() {}
 
+  /**
+   * Returns the type of the current panel.
+   */
   @Override
   public String toString() {
     return "DropPanel";
