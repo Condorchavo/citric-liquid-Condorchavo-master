@@ -169,13 +169,39 @@ public class Player extends AbstractUnit {
   }
 
   /**
+   * This method is executed when the player choose to defend.
+   */
+  private void defend(int atk, int def, int rollAttack) {
+    int rollDefend = roll();
+    int damage = Math.max(1, rollAttack + atk - (rollDefend + def));
+    System.out.println(this.name + " defendió y recibió un daño total de: " + damage);
+  }
+
+  /**
+   * This method is executed when the player choose to dodge.
+   */
+  private void dodge(int atk, int evd, int rollAttack) {
+    int rollEvd = roll();
+    if (rollEvd + evd > rollAttack + atk) {
+      System.out.println(this.name + " esquivó y no recibió daño");
+    } else {
+      System.out.println(this.name + " esquivó y recibió el total del ataque");
+    }
+  }
+
+  /**
    * This method is executed when the actual player have a battle against a unit.
    */
   public int unitBattle(Enemies unit) {
     //that will be an input when implemented
     System.out.println(this.name + ", ¿Elige activar una carta?");
     int attack = this.battleRoll();
-    System.out.println("etc... ");
+    int num = roll();
+    if (num == 1 || num == 3 || num == 5) {
+      this.defend(attack, 2, num);
+    } else {
+      this.dodge(attack, 1, num);
+    }
     return attack;
   }
 
