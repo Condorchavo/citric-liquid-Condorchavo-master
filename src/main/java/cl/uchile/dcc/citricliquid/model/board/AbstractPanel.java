@@ -12,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
  * @version 2.0
  * @since 1.0
  */
-public abstract class AbstractPanel {
+public abstract class AbstractPanel implements Panel {
   private final List<AbstractPanel> nextPanels = new ArrayList<>();
 
   public AbstractPanel() {}

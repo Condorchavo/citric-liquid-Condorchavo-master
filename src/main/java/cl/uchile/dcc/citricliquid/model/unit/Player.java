@@ -144,7 +144,7 @@ public class Player extends AbstractUnit {
   /**
    * This method is executed when the actual player won against a unit.
    */
-  public void winAgainstUnit(@NotNull Unit unit) {
+  public void winAgainstUnit(@NotNull Enemies unit) {
     this.increaseStarsBy(unit.getStars());
     unit.defeatedByPlayer(this);
   }
@@ -152,7 +152,7 @@ public class Player extends AbstractUnit {
   /**
    * This method is executed when the actual player lost against a unit.
    */
-  public void defeatedByUnit(@NotNull Unit unit) {
+  public void defeatedByUnit(@NotNull Enemies unit) {
     unit.winAgainstPlayer(this);
   }
 
@@ -171,7 +171,7 @@ public class Player extends AbstractUnit {
   /**
    * This method is executed when the actual player have a battle against a unit.
    */
-  public int unitBattle(Unit unit) {
+  public int unitBattle(Enemies unit) {
     //that will be an input when implemented
     System.out.println(this.name + ", ¿Elige activar una carta?");
     int attack = this.battleRoll();

@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
  * @version 2.0
  * @since 1.0
  */
-public class WildUnit extends AbstractUnit implements Unit {
+public class WildUnit extends AbstractUnit implements Enemies {
 
   /**
    * Creates a new character.
