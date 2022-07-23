@@ -5,4 +5,7 @@ Base code for CC3002's *99.7% Citric Juice* Project.
 
 The actual project contains the classes and interfaces used to represent the panels
 and the units, so they can be used to recreate the actual gameplay of the game
-100% orange juice. 
+100% orange juice.
+
+Some minor details were fixed with respect to the first part of the proyect, based
+on the feedback of that.
