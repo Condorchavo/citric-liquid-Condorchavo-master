@@ -2,6 +2,13 @@ package cl.uchile.dcc.citricliquid.model.unit;
 
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * Interface for the player, boss and wild units.
+ *
+ * @author <a href="mailto:vicente.gatica@ug.uchile.cl">Vicente Gatica Perez</a>.
+ * @version 2.0
+ * @since 1.0
+ */
 public interface Unit {
   /**
    * Returns the character's name.
